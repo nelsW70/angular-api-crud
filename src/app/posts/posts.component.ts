@@ -10,19 +10,9 @@ export class PostsComponent {
   posts: any;
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  // users example
-  users: any;
-  private urlUser = 'https://jsonplaceholder.typicode.com/users';
-
   constructor(private http: HttpClient) {
     http.get(this.url).subscribe(response => {
       this.posts = response;
-    });
-
-    // users example
-    http.get(this.urlUser).subscribe(response => {
-      this.users = response;
-      console.log(this.users);
     });
   }
 
