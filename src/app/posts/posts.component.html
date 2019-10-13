@@ -1,0 +1,23 @@
+<ul class="list-group">
+  <li *ngFor="let user of users | slice: 0:5" class="list-group-item">
+    {{ user.name }}
+  </li>
+</ul>
+
+<br />
+
+<input
+  type="text"
+  class="form-control"
+  (keyup.enter)="createPost(title)"
+  #title
+/>
+
+<ul class="list-group">
+  <li *ngFor="let post of posts" class="list-group-item">
+    <button (click)="deletePost(post)" class="btn btn-default btn-sm">
+      delete
+    </button>
+    {{ post.title }}
+  </li>
+</ul>
