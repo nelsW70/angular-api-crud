@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit {
   posts: any;
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -40,4 +40,6 @@ export class PostsComponent {
       this.posts.splice(index, 1);
     });
   }
+
+  ngOnInit() {}
 }
